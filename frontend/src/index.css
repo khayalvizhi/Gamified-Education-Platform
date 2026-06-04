@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0a0e1a;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b2647;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* RPG UI Glowing effects */
+.rpg-card {
+  @apply bg-navy-light border border-slate-800 rounded-lg p-6 transition-all duration-300 hover:border-purple/50;
+}
+
+.gold-border {
+  border-color: #f5c842;
+  box-shadow: 0 0 10px rgba(245, 200, 66, 0.2);
+}
+
+.purple-border {
+  border-color: #7c3aed;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 8px rgba(245, 200, 66, 0.5);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+}
+
+/* Keyframes & Animations */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 200, 66, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(245, 200, 66, 0.6);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
+@keyframes pulse-purple {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
+  }
+}
+
+.animate-pulse-purple {
+  animation: pulse-purple 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(19, 26, 49, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
